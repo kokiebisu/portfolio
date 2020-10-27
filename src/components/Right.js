@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const Right = () => {
   return (
-    <Right>
+    <Wrapper>
       <HeaderRight></HeaderRight>
       <div>
         <Avatar>
@@ -13,12 +13,19 @@ export const Right = () => {
           <h3>Kenichi Okiebisu</h3>
         </Name>
         <Role>
-          <h3>Frontend Developer</h3>
+          <h4>Frontend Developer</h4>
         </Role>
       </div>
-    </Right>
+    </Wrapper>
   );
 };
+
+const Wrapper = styled.div`
+  background-color: #fafafa;
+  width: 30%;
+  padding: 20px;
+  height: 100vh;
+`;
 
 const HeaderRight = styled.div`
   height: 70px;
@@ -27,6 +34,16 @@ const HeaderRight = styled.div`
 
 const Avatar = styled.div``;
 
-const Name = styled.div``;
+const Name = styled.div`
+  & h3 {
+    font-family: --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+`;
 
-const Role = styled.div``;
+const Role = styled.div`
+  & h4 {
+    font-family: --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+`;
