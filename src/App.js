@@ -18,7 +18,7 @@ import {
 } from './assets/svg/icon';
 import { Slider } from './components/Slider';
 import './App.css';
-import { Right } from './components/Right';
+import { RightContent } from './components/RightContent';
 import { AboutMe } from './components/AboutMe';
 
 function App() {
@@ -74,7 +74,9 @@ function App() {
           <AboutMe />
         </Main>
       </Left>
-      <Right />
+      <Right>
+        <RightContent />
+      </Right>
     </Wrapper>
   );
 }
@@ -84,7 +86,10 @@ const Wrapper = styled.div`
 `;
 
 const Left = styled.div`
-  width: 70%;
+  width: 100%;
+  @media (min-width: 1028px) {
+    width: calc(100% - 400px);
+  }
 `;
 
 const HeaderLeft = styled.div`
@@ -98,29 +103,41 @@ const Main = styled.div`
   margin: 20px auto;
 `;
 
-const Animation = styled.div`
-  width: 100%;
-  height: 250px;
+const Right = styled.div`
+  display: none;
+
+  @media (min-width: 1028px) {
+    display: block;
+    width: 400px;
+  }
 `;
 
 const Header = styled.h3`
-  font-size: 72px;
+  font-size: 48px;
   font-family: 'Walsheim-Bold';
   max-width: 600px;
   width: 100%;
   margin: 0 auto;
+
+  @media (min-width: 728px) {
+    font-size: 72px;
+  }
 `;
 
 const SubHeader = styled.p`
-  margin: 15px 0;
-  font-size: 32px;
+  margin: 8px auto;
+  font-size: 20px;
   font-family: 'Walsheim';
   width: 100%;
   max-width: 600px;
   color: gray;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
+  text-align: left;
+
+  @media (min-width: 728px) {
+    font-size: 32px;
+    margin: 15px auto;
+    text-align: center;
+  }
 `;
 
 export default App;
