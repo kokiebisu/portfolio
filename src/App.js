@@ -1,8 +1,6 @@
 import styled from 'styled-components';
 import {
   AirbnbLogo,
-  Html,
-  Css,
   Javascript,
   Typescript,
   ReactLogo,
@@ -10,59 +8,64 @@ import {
   NodejsLogo,
   CircleCILogo,
   GolangLogo,
-  StorybookLogo,
   NextJSLogo,
   AWSLogo,
+  WebpackLogo,
+  SassLogo,
+  PostgresLogo,
+  MongoDBLogo,
+  ApolloLogo,
 } from './assets/svg/icon';
 import { Slider } from './components/Slider';
-
 import './App.css';
 
 function App() {
   const iconsA = [
-    <Html width={50} />,
-    <Css width={50} />,
     <Javascript width={50} />,
     <Typescript width={50} />,
     <ReactLogo width={50} />,
     <DockerLogo width={150} />,
-    <NodejsLogo width={50} />,
-    <Html width={50} />,
-    <Css width={50} />,
+    <NodejsLogo width={80} />,
+    <GolangLogo width={80} />,
+    <CircleCILogo width={50} />,
     <Javascript width={50} />,
     <Typescript width={50} />,
     <ReactLogo width={50} />,
     <DockerLogo width={150} />,
-    <NodejsLogo width={50} />,
+    <NodejsLogo width={80} />,
+    <GolangLogo width={80} />,
+    <CircleCILogo width={50} />,
   ];
 
   const iconsB = [
-    <GolangLogo width={50} />,
-    <StorybookLogo width={50} />,
-    <CircleCILogo width={50} />,
     <NextJSLogo width={80} />,
     <AWSLogo width={70} />,
-    <DockerLogo width={150} />,
-    <NodejsLogo width={50} />,
-    <Html width={50} />,
-    <Css width={50} />,
-    <Javascript width={50} />,
-    <Typescript width={50} />,
-    <ReactLogo width={50} />,
-    <DockerLogo width={150} />,
-    <NodejsLogo width={50} />,
+    <ApolloLogo width={120} />,
+    <WebpackLogo width={60} />,
+    <SassLogo width={60} />,
+    <PostgresLogo width={50} />,
+    <MongoDBLogo width={100} />,
+    <NextJSLogo width={80} />,
+    <AWSLogo width={70} />,
+    <ApolloLogo width={120} />,
+    <WebpackLogo width={60} />,
+    <SassLogo width={60} />,
+    <PostgresLogo width={50} />,
+    <MongoDBLogo width={100} />,
   ];
 
   return (
     <Wrapper>
       <Left>
         <HeaderLeft>
-          <div>Logo</div>
+          <div>
+            <h3 style={{ fontSize: 36, fontFamily: 'Sacramento' }}>kokoaj</h3>
+          </div>
         </HeaderLeft>
         <Main>
           <Header>Welcome.</Header>
           <SubHeader>Try hovering below!</SubHeader>
-          <div style={{ margin: '64px 0' }}>
+          <div style={{ margin: '64px 0 32px 0' }}>
             <Slider icons={iconsA} timing={40} />
             <Slider icons={iconsB} timing={25} />
           </div>
@@ -155,7 +158,7 @@ const AboutMe = styled.div`
     );
 
   & > div {
-    border-radius: 20px;
+    border-radius: 10px;
   }
 `;
 
