@@ -1,7 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { AirbnbLogo } from '../assets/svg/icon';
+import {
+  AirbnbLogo,
+  SlackLogo,
+  Cooking,
+  SnowBoarding,
+  Guitar,
+} from '../assets/svg/icon';
 
 const Years = styled.h3`
   background: linear-gradient(to right, #f953c6, #cc2e8d);
@@ -12,7 +18,7 @@ const Years = styled.h3`
 export const AboutMe = () => {
   return (
     <Wrapper>
-      <ItemA>
+      <ItemA whileHover={{ scale: 1.03 }}>
         <div
           style={{
             height: '100%',
@@ -34,32 +40,62 @@ export const AboutMe = () => {
           </div>
         </div>
       </ItemA>
-      <ItemB>
+      <ItemB whileHover={{ scale: 1.03 }}>
         <div style={{ height: '100%', padding: 15 }}>
           <div>
             <h3>rst</h3>
           </div>
         </div>
       </ItemB>
-      <ItemC>
-        <div style={{ height: '100%', padding: 15 }}>first</div>
+      <ItemC whileHover={{ scale: 1.03 }}>
+        <div
+          style={{
+            height: '100%',
+            padding: 15,
+            display: 'flex',
+            alignItems: 'center',
+          }}>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              width: '100%',
+              padding: '0 20px',
+            }}>
+            <div style={{ width: 40 }}>
+              <Cooking />
+            </div>
+            <div style={{ width: 40 }}>
+              <SnowBoarding />
+            </div>
+            <div style={{ width: 40 }}>
+              <Guitar />
+            </div>
+          </div>
+        </div>
       </ItemC>
-      <ItemD>
+      <ItemD whileHover={{ scale: 1.03 }}>
         <div style={{ height: '100%', padding: 15 }}>first</div>
       </ItemD>
-      <ItemE>
+      <ItemE whileHover={{ scale: 1.03 }}>
         <div style={{ height: '100%', padding: 15 }}></div>
       </ItemE>
-      <ItemF>
+      <ItemF whileHover={{ scale: 1.03 }}>
         <div style={{ height: '100%', padding: 15 }}>
           <div
             style={{
               height: '100%',
               display: 'flex',
-              justifyContent: 'center',
+              justifyContent: 'space-between',
               alignItems: 'center',
+              padding: '0 15px',
             }}>
-            <AirbnbLogo width={30} />
+            <div>
+              <AirbnbLogo width={30} />
+            </div>
+            <div>
+              <SlackLogo width={30} />
+            </div>
           </div>
         </div>
       </ItemF>
