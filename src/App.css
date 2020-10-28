@@ -36,3 +36,63 @@
     transform: rotate(360deg);
   }
 }
+
+.first {
+  background-image: repeating-linear-gradient(
+    11deg,
+    #c82e64,
+    #c82e64 10px,
+    #c95eb0 10px,
+    #c95eb0 30px
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.second {
+  background-image: url(https://dc28c2r6oodom.cloudfront.net/p/h/010.jpg);
+  background-position-x: center;
+  background-position-y: 97%;
+  background-size: contain;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.third {
+  background-image: repeating-linear-gradient(
+    287deg,
+    #54ccd4,
+    #54ccd4 10px,
+    #85d6ba 10px,
+    #85d6ba 30px
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fourth {
+  background-image: url(https://dc28c2r6oodom.cloudfront.net/p/v/156.jpg);
+  background-position-x: right;
+  background-position-y: bottom;
+  background-size: cover;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.fifth {
+  background-image: url(https://dc28c2r6oodom.cloudfront.net/p/v/090.jpg);
+  background-position-x: 37%;
+  background-position-y: 53%;
+  background-size: cover;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sixth {
+  background-image: url(https://dc28c2r6oodom.cloudfront.net/p/v/045.jpg);
+  background-position-x: right;
+  background-position-y: 97%;
+  background-size: 25%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

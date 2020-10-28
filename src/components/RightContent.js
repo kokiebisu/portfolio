@@ -5,7 +5,6 @@ import { GithubLogo, LinkedinLogo, GmailLogo } from '../assets/svg/icon';
 export const RightContent = () => {
   return (
     <Wrapper>
-      {/* <HeaderRight></HeaderRight> */}
       <div
         style={{
           display: 'flex',
@@ -53,7 +52,9 @@ export const RightContent = () => {
 };
 
 const Wrapper = styled.div`
-  background-color: #fafafa;
+  /* background-color: #fafafa; */
+  /* background-color: #fff1e6; */
+  background-color: gray;
   padding: 20px;
   height: 100vh;
   display: flex;

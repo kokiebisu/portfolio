@@ -10,11 +10,17 @@ import {
   BCITLogo,
 } from '../assets/svg/icon';
 import japan1 from '../assets/img/japan1.png';
+import './AboutMe.css';
 
-export const AboutMe = () => {
+export const AboutMe = ({ setState, setNumber }) => {
   return (
     <Wrapper>
-      <ItemA whileHover={{ scale: 1.03 }}>
+      <ItemA
+        whileHover={{ scale: 1.03 }}
+        onClick={() => {
+          setState('I have 3 years of experience');
+          setNumber('first');
+        }}>
         <div
           style={{
             height: '100%',
@@ -25,7 +31,6 @@ export const AboutMe = () => {
             alignItems: 'center',
             textAlign: 'center',
           }}>
-          <div></div>
           <div>
             <Years
               style={{
@@ -36,7 +41,12 @@ export const AboutMe = () => {
           </div>
         </div>
       </ItemA>
-      <ItemB whileHover={{ scale: 1.03 }}>
+      <ItemB
+        whileHover={{ scale: 1.03 }}
+        onClick={() => {
+          setState('I graduted from BCIT');
+          setNumber('second');
+        }}>
         <div
           style={{
             height: '100%',
@@ -51,7 +61,12 @@ export const AboutMe = () => {
           </div>
         </div>
       </ItemB>
-      <ItemC whileHover={{ scale: 1.03 }}>
+      <ItemC
+        whileHover={{ scale: 1.03 }}
+        onClick={() => {
+          setState('I aspire to be a Fullstack Developer');
+          setNumber('third');
+        }}>
         <div
           style={{
             height: '100%',
@@ -62,13 +77,21 @@ export const AboutMe = () => {
           <div
             style={{
               width: '100%',
-              padding: '0 20px',
+              padding: '0 7px 30px',
             }}>
-            <Role>Fullstack Developer</Role>
+            <Role>
+              Fullstack <br />
+              Developer
+            </Role>
           </div>
         </div>
       </ItemC>
-      <ItemD whileHover={{ scale: 1.03 }}>
+      <ItemD
+        whileHover={{ scale: 1.03 }}
+        onClick={() => {
+          setState('These are the few of my favorite things');
+          setNumber('fourth');
+        }}>
         <div
           style={{
             height: '100%',
@@ -89,7 +112,12 @@ export const AboutMe = () => {
           </div>
         </div>
       </ItemD>
-      <ItemE whileHover={{ scale: 1.03 }}>
+      <ItemE
+        whileHover={{ scale: 1.03 }}
+        onClick={() => {
+          setState('I am from Japan');
+          setNumber('fifth');
+        }}>
         <div style={{ height: '100%' }}>
           <img
             src={japan1}
@@ -97,22 +125,27 @@ export const AboutMe = () => {
           />
         </div>
       </ItemE>
-      <ItemF whileHover={{ scale: 1.03 }}>
+      <ItemF
+        whileHover={{ scale: 1.03 }}
+        onClick={() => {
+          setState('Check out my projects on Github!');
+          setNumber('sixth');
+        }}>
         <div style={{ height: '100%', padding: 15 }}>
           <div
             style={{
               height: '100%',
               display: 'flex',
-              justifyContent: 'space-between',
+              justifyContent: 'center',
               alignItems: 'center',
-              padding: '0 15px',
+              padding: '0 8px',
             }}>
-            <div>
+            <LogoWrapper>
               <AirbnbLogo width={30} />
-            </div>
-            <div>
+            </LogoWrapper>
+            <LogoWrapper>
               <SlackLogo width={30} />
-            </div>
+            </LogoWrapper>
           </div>
         </div>
       </ItemF>
@@ -122,15 +155,25 @@ export const AboutMe = () => {
 
 const Wrapper = styled.div`
   width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
+  margin: 30px auto 60px auto;
+  padding: 0 45px;
   grid-template-columns: minmax(auto, 38%) minmax(auto, 62%);
   display: grid;
   grid-gap: 20px;
 
+  @media (min-width: 560px) {
+    max-width: 400px;
+    margin: 0px auto;
+    padding: 0;
+  }
+
   @media (min-width: 728px) {
     max-width: 600px;
     height: 250px;
+    grid-template-columns: minmax(auto, 17%) minmax(auto, 28%) minmax(auto, 35%) minmax(
+        auto,
+        20%
+      );
   }
 
   & > div {
@@ -139,9 +182,11 @@ const Wrapper = styled.div`
 `;
 
 const ItemA = styled(motion.div)`
+  cursor: pointer;
   font-family: 'Walsheim';
   background: #ffffff;
-  box-shadow: 10px 10px 30px #d9d9d9, -10px -10px 30px #ffffff;
+  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+  border: none;
 
   grid-column-start: 1;
   grid-column-end: 2;
@@ -150,15 +195,19 @@ const ItemA = styled(motion.div)`
 `;
 
 const ItemB = styled(motion.div)`
+  cursor: pointer;
+  border: none;
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 2;
   background: #ffffff;
-  box-shadow: 10px 10px 30px #d9d9d9, -10px -10px 30px #ffffff;
+  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
 `;
 
 const ItemC = styled(motion.div)`
+  cursor: pointer;
+  border: none;
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 2;
@@ -168,6 +217,8 @@ const ItemC = styled(motion.div)`
 `;
 
 const ItemD = styled(motion.div)`
+  cursor: pointer;
+  border: none;
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 4;
@@ -184,6 +235,8 @@ const ItemD = styled(motion.div)`
 `;
 
 const ItemE = styled(motion.div)`
+  cursor: pointer;
+  border: none;
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 4;
@@ -200,6 +253,8 @@ const ItemE = styled(motion.div)`
 `;
 
 const ItemF = styled(motion.div)`
+  cursor: pointer;
+  border: none;
   grid-column-start: 2;
   grid-column-end: 3;
   grid-row-start: 5;
@@ -216,18 +271,44 @@ const ItemF = styled(motion.div)`
 `;
 
 const Years = styled.h3`
-  background: linear-gradient(to right, #f953c6, #cc2e8d);
+  /* background: linear-gradient(to right, #f953c6, #cc2e8d);
   -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text; */
+
+  background-image: repeating-linear-gradient(
+    11deg,
+    #c82e64,
+    #c82e64 10px,
+    #c95eb0 10px,
+    #c95eb0 30px
+  );
   -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 `;
 
 const Role = styled.h3`
-  font-size: 38px;
-  background: linear-gradient(to right, #11998e, #38ef7d);
-  -webkit-text-fill-color: transparent;
+  font-size: 32px;
+
+  background-image: repeating-linear-gradient(
+    287deg,
+    #54ccd4,
+    #54ccd4 10px,
+    #85d6ba 10px,
+    #85d6ba 30px
+  );
   -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
   line-height: 1;
   font-weight: 700;
   font-family: --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+`;
+
+const LogoWrapper = styled.div`
+  margin: 0 24px;
+
+  @media (min-width: 728px) {
+    margin: 0 8px;
+  }
 `;

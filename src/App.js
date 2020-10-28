@@ -1,6 +1,6 @@
 import styled from 'styled-components';
+import { useState, useEffect } from 'react';
 import {
-  AirbnbLogo,
   Javascript,
   Typescript,
   ReactLogo,
@@ -20,6 +20,7 @@ import { Slider } from './components/Slider';
 import './App.css';
 import { RightContent } from './components/RightContent';
 import { AboutMe } from './components/AboutMe';
+import { motion } from 'framer-motion';
 
 function App() {
   const iconsA = [
@@ -55,6 +56,41 @@ function App() {
     <PostgresLogo width={50} />,
     <MongoDBLogo width={100} />,
   ];
+  const [state, setState] = useState('hi there.');
+  const [number, setNumber] = useState('zero');
+  let string = state.split(/(\s+)/);
+
+  useEffect(() => {
+    string = state.split(/(\s+)/);
+  }, [state]);
+
+  // Add staggering effect to the children of the container
+  const containerVariants = {
+    before: {},
+    after: { transition: { staggerChildren: 0.1 } },
+  };
+
+  // Variants for animating each letter
+  const letterVariants = {
+    before: {
+      opacity: 0,
+      // y: 20,
+      transition: {
+        type: 'spring',
+        damping: 16,
+        stiffness: 200,
+      },
+    },
+    after: {
+      opacity: 1,
+      // y: 0,
+      transition: {
+        type: 'spring',
+        damping: 16,
+        stiffness: 200,
+      },
+    },
+  };
 
   return (
     <Wrapper>
@@ -65,13 +101,38 @@ function App() {
           </div>
         </HeaderLeft>
         <Main>
-          <Header>hi there.</Header>
+          <motion.div>
+            <Header
+              style={{ height: 130, lineHeight: 1.2 }}
+              variants={containerVariants}
+              initial={'before'}
+              animate={'after'}>
+              {string.map((word, index) => {
+                return (
+                  <motion.h1
+                    className={number}
+                    style={{
+                      display: 'inline-block',
+                      fontSize: '100%',
+                      letterSpacing: 0.05,
+                    }}
+                    // width={'auto'}
+                    key={index}
+                    variants={letterVariants}>
+                    {/* {letter === ' ' ? '\u00A0' : letter} */}
+
+                    {word === ' ' ? '\u00A0' : word}
+                  </motion.h1>
+                );
+              })}
+            </Header>
+          </motion.div>
           <SubHeader>Try hovering below!</SubHeader>
-          <div style={{ margin: '64px 0 48px 0' }}>
+          <div style={{ margin: '72px 0 48px 0' }}>
             <Slider icons={iconsA} timing={40} />
             <Slider icons={iconsB} timing={25} />
           </div>
-          <AboutMe />
+          <AboutMe state={state} setState={setState} setNumber={setNumber} />
         </Main>
       </Left>
       <Right>
@@ -87,7 +148,7 @@ const Wrapper = styled.div`
 
 const Left = styled.div`
   width: 100%;
-  @media (min-width: 1028px) {
+  @media (min-width: 1200px) {
     width: calc(100% - 400px);
   }
 `;
@@ -106,21 +167,22 @@ const Main = styled.div`
 const Right = styled.div`
   display: none;
 
-  @media (min-width: 1028px) {
+  @media (min-width: 1200px) {
     display: block;
     width: 400px;
   }
 `;
 
-const Header = styled.h3`
-  font-size: 48px;
-  font-family: 'Walsheim-Bold';
-  max-width: 600px;
+const Header = styled(motion.div)`
+  padding: 0 35px;
   width: 100%;
-  margin: 0 auto;
+  font-family: 'AirbnbCereal-ExtraBold';
 
   @media (min-width: 728px) {
-    font-size: 72px;
+    padding: 0;
+    font-size: 56px;
+    max-width: 600px;
+    margin: 0 auto;
   }
 `;
 
@@ -129,15 +191,26 @@ const SubHeader = styled.p`
   font-size: 20px;
   font-family: 'Walsheim';
   width: 100%;
-  max-width: 600px;
+  padding: 0 35px;
   color: gray;
-  text-align: left;
 
   @media (min-width: 728px) {
+    padding: 0;
     font-size: 32px;
     margin: 15px auto;
-    text-align: center;
+
+    max-width: 600px;
   }
+`;
+
+const Overlay = styled.div`
+  background: white;
+  opacity: 0.2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 `;
 
 export default App;

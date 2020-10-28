@@ -17,6 +17,16 @@
 }
 
 @font-face {
+  font-family: 'AirbnbCereal-ExtraBold';
+  src: url(assets/fonts/AirbnbCereal-ExtraBold.woff);
+}
+
+@font-face {
+  font-family: 'AirbnbCereal-Bold';
+  src: url(assets/fonts/AirbnbCereal-Bold.woff2);
+}
+
+@font-face {
   font-family: 'Walsheim';
   src: url(assets/fonts/GTWalsheim-Medium.woff2);
 }
@@ -52,6 +62,8 @@ p {
   font-weight: 400;
 }
 
+h1,
+h2,
 h3,
 h4,
 p {
