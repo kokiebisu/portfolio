@@ -126,7 +126,7 @@ function App() {
               })}
             </Header>
           </motion.div>
-          <SubHeader>Try hovering below!</SubHeader>
+          <SubHeader>Try clicking below!</SubHeader>
           <div style={{ margin: '72px 0 48px 0' }}>
             <Slider icons={iconsA} timing={40} />
             <Slider icons={iconsB} timing={25} />

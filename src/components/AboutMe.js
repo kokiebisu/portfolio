@@ -18,7 +18,7 @@ export const AboutMe = ({ setState, setNumber }) => {
       <ItemA
         whileHover={{ scale: 1.03 }}
         onClick={() => {
-          setState('I have 3 years of experience');
+          setState('3 years of experience');
           setNumber('first');
         }}>
         <div
@@ -44,7 +44,7 @@ export const AboutMe = ({ setState, setNumber }) => {
       <ItemB
         whileHover={{ scale: 1.03 }}
         onClick={() => {
-          setState('I graduted from BCIT');
+          setState('Graduated from BCIT.');
           setNumber('second');
         }}>
         <div
@@ -64,7 +64,7 @@ export const AboutMe = ({ setState, setNumber }) => {
       <ItemC
         whileHover={{ scale: 1.03 }}
         onClick={() => {
-          setState('I aspire to be a Fullstack Developer');
+          setState('Aspire to be a Fullstack Developer.');
           setNumber('third');
         }}>
         <div
@@ -89,7 +89,7 @@ export const AboutMe = ({ setState, setNumber }) => {
       <ItemD
         whileHover={{ scale: 1.03 }}
         onClick={() => {
-          setState('These are the few of my favorite things');
+          setState('These are the few of my favorite things.');
           setNumber('fourth');
         }}>
         <div
@@ -115,7 +115,7 @@ export const AboutMe = ({ setState, setNumber }) => {
       <ItemE
         whileHover={{ scale: 1.03 }}
         onClick={() => {
-          setState('I am from Japan');
+          setState('Passionate developer from Japan.');
           setNumber('fifth');
         }}>
         <div style={{ height: '100%' }}>
