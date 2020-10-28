@@ -103,7 +103,6 @@ function App() {
         <Main>
           <motion.div>
             <Header
-              style={{ height: 130, lineHeight: 1.2 }}
               variants={containerVariants}
               initial={'before'}
               animate={'after'}>
@@ -114,7 +113,7 @@ function App() {
                     style={{
                       display: 'inline-block',
                       fontSize: '100%',
-                      letterSpacing: 0.05,
+                      letterSpacing: 0.001,
                     }}
                     // width={'auto'}
                     key={index}
@@ -177,12 +176,18 @@ const Header = styled(motion.div)`
   padding: 0 35px;
   width: 100%;
   font-family: 'AirbnbCereal-ExtraBold';
+  font-size: 36px;
+  height: 120px;
+  letter-spacing: 0.9px;
+  line-height: 1.1;
 
   @media (min-width: 728px) {
     padding: 0;
     font-size: 56px;
     max-width: 600px;
     margin: 0 auto;
+    height: 130px;
+    line-height: 1.2;
   }
 `;
 
