@@ -115,7 +115,7 @@ export const AboutMe = ({ setState, setNumber }) => {
       <ItemE
         whileHover={{ scale: 1.03 }}
         onClick={() => {
-          setState('Passionate developer from Japan.');
+          setState('A developer from Japan.');
           setNumber('fifth');
         }}>
         <div style={{ height: '100%' }}>
