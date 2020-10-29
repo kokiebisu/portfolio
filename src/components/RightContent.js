@@ -30,18 +30,27 @@ export const RightContent = () => {
           </Role>
         </div>
         <div style={{ width: 150, margin: '15px auto' }}>
-          <div style={{ display: 'inline-block', margin: '0 10px' }}>
+          <a
+            href='https://github.com/kokiebisu'
+            style={{ display: 'inline-block', margin: '0 10px' }}>
             <GithubLogo width={25} />
-          </div>
-          <div style={{ display: 'inline-block', margin: '0 10px' }}>
+          </a>
+          <a
+            href='https://www.linkedin.com/in/kokiebisu'
+            style={{ display: 'inline-block', margin: '0 10px' }}>
             <LinkedinLogo width={25} />
-          </div>
+          </a>
           <div style={{ display: 'inline-block', margin: '0 10px' }}>
             <GmailLogo width={25} />
           </div>
         </div>
         <div>
-          <p style={{ textAlign: 'center', fontFamily: 'AirbnbCereal-Light' }}>
+          <p
+            style={{
+              textAlign: 'center',
+              fontFamily: 'AirbnbCereal-Light',
+              color: '#9b9b7a',
+            }}>
             Hi! I'm Ken and I am currently looking for a frontend or fullstack
             developer position. Please reach me out if your interested!
           </p>
@@ -54,7 +63,7 @@ export const RightContent = () => {
 const Wrapper = styled.div`
   /* background-color: #fafafa; */
   /* background-color: #fff1e6; */
-  background-color: gray;
+  background-color: #f0efeb;
   padding: 20px;
   height: 100vh;
   display: flex;
@@ -72,6 +81,7 @@ const Avatar = styled.div``;
 const Name = styled.div`
   text-align: center;
   & h3 {
+    color: #6b705c;
     font-family: --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
       Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
@@ -80,6 +90,7 @@ const Name = styled.div`
 const Role = styled.div`
   text-align: center;
   & h4 {
+    color: #9b9b7a;
     font-weight: 300;
     font-family: --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
       Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
