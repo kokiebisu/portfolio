@@ -177,7 +177,7 @@ const Header = styled(motion.div)`
   padding: 0 35px;
   width: 100%;
   font-family: 'AirbnbCereal-ExtraBold';
-  font-size: 36px;
+  font-size: 48px;
   letter-spacing: 0.9px;
   line-height: 1.1;
 
