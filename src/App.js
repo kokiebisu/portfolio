@@ -129,10 +129,10 @@ function App() {
             </motion.div>
             <SubHeader>Try clicking below!</SubHeader>
           </div>
-          <div style={{ margin: '72px 0 48px 0' }}>
+          <SliderContainer>
             <Slider icons={iconsA} timing={40} />
             <Slider icons={iconsB} timing={25} />
-          </div>
+          </SliderContainer>
           <AboutMe state={state} setState={setState} setNumber={setNumber} />
         </Main>
       </Left>
@@ -144,6 +144,7 @@ function App() {
 }
 
 const Wrapper = styled.div`
+  height: 100vh;
   display: flex;
 `;
 
@@ -209,14 +210,12 @@ const SubHeader = styled.p`
   }
 `;
 
-const Overlay = styled.div`
-  background: white;
-  opacity: 0.2;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
+const SliderContainer = styled.div`
+  margin: 100px 0 36px;
+
+  @media (min-width: 728px) {
+    margin: 56px 0 36px;
+  }
 `;
 
 export default App;
