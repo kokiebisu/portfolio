@@ -144,7 +144,6 @@ function App() {
 }
 
 const Wrapper = styled.div`
-  height: 100vh;
   display: flex;
 `;
 
@@ -162,7 +161,7 @@ const HeaderLeft = styled.div`
 
 const Main = styled.div`
   width: 100%;
-  margin: 20px auto;
+  margin: 20px auto 65px auto;
 `;
 
 const Right = styled.div`
