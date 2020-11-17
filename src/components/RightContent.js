@@ -29,20 +29,23 @@ export const RightContent = () => {
             </h4>
           </Role>
         </div>
-        <div style={{ width: 150, margin: '15px auto' }}>
-          <a
-            href='https://github.com/kokiebisu'
-            style={{ display: 'inline-block', margin: '0 10px' }}>
-            <GithubLogo width={25} />
-          </a>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            width: 150,
+            margin: '15px auto',
+          }}>
+          <div>
+            <a href='https://github.com/kokiebisu' style={{ margin: '0 10px' }}>
+              <GithubLogo width={25} />
+            </a>
+          </div>
           <a
             href='https://www.linkedin.com/in/kokiebisu'
-            style={{ display: 'inline-block', margin: '0 10px' }}>
+            style={{ margin: '0 10px' }}>
             <LinkedinLogo width={25} />
           </a>
-          <div style={{ display: 'inline-block', margin: '0 10px' }}>
-            <GmailLogo width={25} />
-          </div>
         </div>
         <div>
           <p
@@ -51,7 +54,7 @@ export const RightContent = () => {
               fontFamily: 'AirbnbCereal-Light',
               color: '#9b9b7a',
             }}>
-            Hi! I'm Ken and I am currently looking for a frontend or fullstack
+            Hi! I'm Ken and I am currently looking for a frontend/fullstack
             developer position. Please reach me out if your interested!
           </p>
         </div>
