@@ -13,7 +13,7 @@ const Category = ({ shouldRun, name }: CategoryProps) => {
     if (nameRef.current) {
       setElementWidth(nameRef.current.offsetWidth);
     }
-  }, [nameRef.current]);
+  }, []);
   return (
     <div className="relative">
       <span ref={nameRef} className="font-bold">

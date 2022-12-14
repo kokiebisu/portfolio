@@ -35,7 +35,7 @@ export default function Home() {
       </Head>
       <header className="flex justify-between items-center px-3">
         <div className="font-bold">献一　沖胡</div>
-        <div className="">theme trigger</div>
+        <div className=""></div>
       </header>
       <main className="lg:flex grid grid-rows-mobile lg:grid-rows-content ">
         <div className="max-w-[500px] w-full pl-3">
@@ -49,7 +49,7 @@ export default function Home() {
             </h4>
           </div>
         </div>
-        <div className="w-full bg-purple-400 p-3 py-6 lg:p-12 border-t-4 lg:border-l-4 border-black">
+        <div className="w-full bg-purple-400 lg:pt-12 lg:p-0 border-t-4 lg:border-l-4 border-black">
           {phase === 0 ? <AboutCard /> : null}
           {phase === 1 ? <ProjectsCard /> : null}
           {phase === 2 ? <BackgroundCard /> : null}

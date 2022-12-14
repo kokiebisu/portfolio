@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       gridTemplateRows: {
-        layout: "100px auto 140px",
+        layout: "100px auto 160px",
         content: "410px auto",
         mobile: "200px auto",
         card: "1fr auto",
