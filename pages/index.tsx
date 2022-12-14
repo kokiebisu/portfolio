@@ -5,7 +5,27 @@ import Link from "next/link";
 import githubLogo from "../public/logo-github.png";
 import linkedinLogo from "../public/logo-linkedin.png";
 
+import { useEffect, useState } from "react";
+import {
+  AboutCard,
+  BackgroundCard,
+  ProjectsCard,
+  Category,
+} from "../components";
+
 export default function Home() {
+  const [phase, setPhase] = useState(0);
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (phase === 2) {
+        setPhase(0);
+      } else {
+        setPhase(phase + 1);
+      }
+    }, 10000);
+  }, [phase]);
+
   return (
     <div className="h-screen w-screen grid grid-rows-layout">
       <Head>
@@ -17,29 +37,26 @@ export default function Home() {
         <div className="font-bold">献一　沖胡</div>
         <div className="">theme trigger</div>
       </header>
-      <main className="px-3">
-        <div className="py-2">
-          <h3 className="font-bold text-xl">ケン　オキエビス</h3>
-        </div>
-        <h3 className="font-bold text-4xl">Ken Okiebisu</h3>
-        <div className="py-8">
-          <h4 className="font-bold text-lg">
-            Software Engineer. Based in Vancouver, Canada
-          </h4>
-        </div>
-        <div className="md:flex py-12">
-          {/* <div className="w-full">
-            <h3 className="font-bold text-3xl">Projects</h3>
-            <div></div>
+      <main className="lg:flex grid grid-rows-mobile lg:grid-rows-content ">
+        <div className="max-w-[500px] w-full pl-3">
+          <div className="py-2">
+            <h3 className="font-bold text-xl">ケン　オキエビス</h3>
           </div>
-          <div className="w-full">
-            <h3 className="font-bold text-3xl">Background</h3>
-            <div></div>
-          </div> */}
+          <h3 className="font-bold text-4xl">Ken Okiebisu</h3>
+          <div className="py-8">
+            <h4 className="font-bold text-lg">
+              Software Engineer. Based in Vancouver, Canada
+            </h4>
+          </div>
+        </div>
+        <div className="w-full bg-purple-400 p-3 py-6 lg:p-12 border-t-4 lg:border-l-4 border-black">
+          {phase === 0 ? <AboutCard /> : null}
+          {phase === 1 ? <ProjectsCard /> : null}
+          {phase === 2 ? <BackgroundCard /> : null}
         </div>
       </main>
-      <footer className="">
-        <div className="flex justify-center items-center py-6">
+      <footer className="bg-yellow-400 border-t-4 border-black">
+        <div className="flex justify-center items-center py-7">
           <div className="mx-2">
             <Link href="https://github.com/kokiebisu">
               <Image
@@ -63,11 +80,26 @@ export default function Home() {
         </div>
         <div className="px-3 flex justify-between items-center">
           <div>
-            <span className="mx-3 font-bold">ABOUT</span>
-            <span className="mx-3 font-bold">PROJECTS</span>
-            <span className="mx-3 font-bold">BACKGROUND</span>
+            <button
+              onClick={() => setPhase(0)}
+              className="mx-3 inline-block relative"
+            >
+              <Category shouldRun={phase === 0} name="about" />
+            </button>
+            <button
+              onClick={() => setPhase(1)}
+              className="mx-3 inline-block relative"
+            >
+              <Category shouldRun={phase === 1} name="projects" />
+            </button>
+            <button
+              onClick={() => setPhase(2)}
+              className="mx-3 inline-block relative"
+            >
+              <Category shouldRun={phase === 2} name="background" />
+            </button>
           </div>
-          <div className="mx-3 font-bold">ver.2022</div>
+          <div className="mx-3 font-bold">ver.2022_canary</div>
         </div>
       </footer>
     </div>

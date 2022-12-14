@@ -8,6 +8,9 @@ module.exports = {
     extend: {
       gridTemplateRows: {
         layout: "100px auto 140px",
+        content: "410px auto",
+        mobile: "200px auto",
+        card: "1fr auto",
       },
     },
   },
