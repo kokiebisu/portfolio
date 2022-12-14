@@ -12,7 +12,7 @@ import {
   ProjectsCard,
   Category,
 } from "../components";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const [phase, setPhase] = useState(0);
@@ -46,46 +46,36 @@ export default function Home() {
             </h4>
           </div>
         </div>
-        <AnimatePresence>
-          {phase === 0 ? (
-            <motion.div
-              initial={{ x: 800 }}
-              animate={{ x: 0 }}
-              transition={{ duration: 1.2, delay: 0.6 }}
-              style={{ zIndex: 1 }}
-              className="w-full bg-purple-400 lg:pt-12 lg:p-0 border-t-4 lg:border-l-4 border-black"
-            >
-              <AboutCard />
-            </motion.div>
-          ) : null}
-        </AnimatePresence>
-        <AnimatePresence>
-          {phase === 1 ? (
-            <motion.div
-              initial={{ x: 800 }}
-              animate={{ x: 0 }}
-              transition={{ duration: 1.2, delay: 0.6 }}
-              style={{ zIndex: 1 }}
-              className="w-full bg-purple-400 lg:pt-12 lg:p-0 border-t-4 lg:border-l-4 border-black"
-            >
-              <ProjectsCard />
-            </motion.div>
-          ) : null}
-        </AnimatePresence>
-        <AnimatePresence>
-          {phase === 2 ? (
-            <motion.div
-              initial={{ x: 800 }}
-              animate={{ x: 0 }}
-              transition={{ duration: 1.2, delay: 0.6 }}
-              exit={{ y: -500 }}
-              style={{ zIndex: 1 }}
-              className="w-full bg-purple-400 lg:pt-12 lg:p-0 border-t-4 lg:border-l-4 border-black"
-            >
-              <BackgroundCard />
-            </motion.div>
-          ) : null}
-        </AnimatePresence>
+        {phase === 0 ? (
+          <motion.div
+            initial={{ x: 800 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 1.2 }}
+            className="w-full bg-purple-400 lg:pt-12 lg:p-0 border-t-4 lg:border-l-4 border-black"
+          >
+            <AboutCard />
+          </motion.div>
+        ) : null}
+        {phase === 1 ? (
+          <motion.div
+            initial={{ x: 800 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 1.2 }}
+            className="w-full bg-purple-400 lg:pt-12 lg:p-0 border-t-4 lg:border-l-4 border-black"
+          >
+            <ProjectsCard />
+          </motion.div>
+        ) : null}
+        {phase === 2 ? (
+          <motion.div
+            initial={{ x: 800 }}
+            animate={{ x: 0 }}
+            transition={{ duration: 1.2 }}
+            className="w-full bg-purple-400 lg:pt-12 lg:p-0 border-t-4 lg:border-l-4 border-black"
+          >
+            <BackgroundCard />
+          </motion.div>
+        ) : null}
       </main>
       <footer className="bg-yellow-400 border-t-4 border-black">
         <div className="flex justify-center items-center py-7">
