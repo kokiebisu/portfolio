@@ -64,7 +64,8 @@ export default function Home() {
         <div className="px-3 flex justify-between items-center">
           <div>
             <span className="mx-3 font-bold">ABOUT</span>
-            <span className="mx-3 font-bold">RESUME</span>
+            <span className="mx-3 font-bold">PROJECTS</span>
+            <span className="mx-3 font-bold">BACKGROUND</span>
           </div>
           <div className="mx-3 font-bold">ver.2022</div>
         </div>
