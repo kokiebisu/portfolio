@@ -31,16 +31,16 @@ export const AboutCard = () => (
       <h3 className="text-white text-3xl">
         I&apos;m from Japan and I usually code or watch 90s movies during my
         free time! My favorite movies are Forrest Gump, Goodfellas and so on...
-        I'm a pizza lover eating almost every week 🍕
+        I&apos;m a pizza lover eating almost every week 🍕
       </h3>
     </div>
   </CardTemplate>
 );
 
 const projectIcons = [
-  <ReactIcon width={45} height={45} />,
-  <GolangIcon width={75} height={75} />,
-  <div className="relative bottom-0.5">
+  <ReactIcon key="react-icon" width={45} height={45} />,
+  <GolangIcon key="golang-icon" width={75} height={75} />,
+  <div key="terraform-icon" className="relative bottom-0.5">
     <TerraformIcon width={50} height={50} />
   </div>,
 ];
@@ -48,8 +48,10 @@ const projectIcons = [
 export const ProjectsCard = () => (
   <CardTemplate
     name="projects"
-    icons={projectIcons.map((icon) => (
-      <div className="mx-8">{icon}</div>
+    icons={projectIcons.map((icon, index) => (
+      <div key={index} className="mx-8">
+        {icon}
+      </div>
     ))}
   >
     <div className="px-12 py-12 lg:py-0">
