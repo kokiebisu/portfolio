@@ -47,34 +47,19 @@ export default function Home() {
           </div>
         </div>
         {phase === 0 ? (
-          <motion.div
-            initial={{ x: 800 }}
-            animate={{ x: 0 }}
-            transition={{ duration: 1.2 }}
-            className="w-full bg-purple-400 lg:pt-12 lg:p-0 border-t-4 lg:border-l-4 border-black"
-          >
+          <div className="w-full bg-purple-400 lg:pt-12 lg:p-0 border-t-4 lg:border-l-4 border-black">
             <AboutCard />
-          </motion.div>
+          </div>
         ) : null}
         {phase === 1 ? (
-          <motion.div
-            initial={{ x: 800 }}
-            animate={{ x: 0 }}
-            transition={{ duration: 1.2 }}
-            className="w-full bg-purple-400 lg:pt-12 lg:p-0 border-t-4 lg:border-l-4 border-black"
-          >
+          <div className="w-full bg-purple-400 lg:pt-12 lg:p-0 border-t-4 lg:border-l-4 border-black">
             <ProjectsCard />
-          </motion.div>
+          </div>
         ) : null}
         {phase === 2 ? (
-          <motion.div
-            initial={{ x: 800 }}
-            animate={{ x: 0 }}
-            transition={{ duration: 1.2 }}
-            className="w-full bg-purple-400 lg:pt-12 lg:p-0 border-t-4 lg:border-l-4 border-black"
-          >
+          <div className="w-full bg-purple-400 lg:pt-12 lg:p-0 border-t-4 lg:border-l-4 border-black">
             <BackgroundCard />
-          </motion.div>
+          </div>
         ) : null}
       </main>
       <footer className="bg-yellow-400 border-t-4 border-black">
