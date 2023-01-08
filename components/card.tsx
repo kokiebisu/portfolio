@@ -11,15 +11,8 @@ const CardTemplate = ({ name, children, icons }: CardProps) => {
   return (
     <div className="h-full w-full grid grid-rows-card">
       {children}
-      <div
-        className={`flex ${
-          name !== "projects" ? "justify-between" : "justify-center"
-        } p-12 bg-black text-white`}
-      >
-        <div className="flex items-center">{icons}</div>
-        {name !== "projects" ? (
-          <h3 className="font-bold text-6xl">{name.toLowerCase()}</h3>
-        ) : null}
+      <div className={`flex justify-end p-12 bg-black text-white`}>
+        <h3 className="font-bold text-6xl">{name.toLowerCase()}</h3>
       </div>
     </div>
   );

@@ -16,19 +16,24 @@ import { motion } from "framer-motion";
 
 export default function Home() {
   const [phase, setPhase] = useState(0);
+  const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout>();
 
   useEffect(() => {
-    setTimeout(() => {
+    if (timeoutId) {
+      clearTimeout(timeoutId);
+    }
+    const id = setTimeout(() => {
       setPhase(phase === 2 ? 0 : phase + 1);
     }, 10000);
+    setTimeoutId(id);
   }, [phase]);
 
   return (
     <div className="h-screen w-screen grid grid-rows-layout">
       <Head>
-        <title>Portfolio</title>
+        <title>Ken's portfolio</title>
         <meta name="description" content="Ken's portfolio" />
-        {/* <link rel="icon" href="/favicon.ico" /> */}
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <header className="flex justify-between items-center px-3">
         <div className="font-bold">献一　沖胡</div>
