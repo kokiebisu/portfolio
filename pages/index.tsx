@@ -12,21 +12,19 @@ import {
   ProjectsCard,
   Category,
 } from "../components";
-import { motion } from "framer-motion";
 
 export default function Home() {
   const [phase, setPhase] = useState(0);
-  const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout>();
 
   useEffect(() => {
-    if (timeoutId) {
-      clearTimeout(timeoutId);
-    }
-    const id = setTimeout(() => {
+    let timer1 = setTimeout(() => {
       setPhase(phase === 2 ? 0 : phase + 1);
     }, 10000);
-    setTimeoutId(id);
-  }, [phase, timeoutId]);
+
+    return () => {
+      clearTimeout(timer1);
+    };
+  }, [phase]);
 
   return (
     <div className="h-screen w-screen grid grid-rows-layout">
@@ -93,19 +91,25 @@ export default function Home() {
         <div className="px-3 flex justify-between items-center">
           <div>
             <button
-              onClick={() => setPhase(0)}
+              onClick={() => {
+                setPhase(0);
+              }}
               className="mx-3 inline-block relative"
             >
               <Category shouldRun={phase === 0} name="about" />
             </button>
             <button
-              onClick={() => setPhase(1)}
+              onClick={() => {
+                setPhase(1);
+              }}
               className="mx-3 inline-block relative"
             >
               <Category shouldRun={phase === 1} name="projects" />
             </button>
             <button
-              onClick={() => setPhase(2)}
+              onClick={() => {
+                setPhase(2);
+              }}
               className="mx-3 inline-block relative"
             >
               <Category shouldRun={phase === 2} name="background" />
