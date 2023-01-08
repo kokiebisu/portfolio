@@ -26,12 +26,12 @@ export default function Home() {
       setPhase(phase === 2 ? 0 : phase + 1);
     }, 10000);
     setTimeoutId(id);
-  }, [phase]);
+  }, [phase, timeoutId]);
 
   return (
     <div className="h-screen w-screen grid grid-rows-layout">
       <Head>
-        <title>Ken's portfolio</title>
+        <title>Ken&apos;s portfolio</title>
         <meta name="description" content="Ken's portfolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
